@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>You know the rules and so do I</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative; /* Añadido para posicionar el botón */
+        }
+        video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        #unmuteButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 10; /* Asegura que el botón esté encima del video */
+            font-weight: bold; /* Añadido para hacer las letras en negrita */
+        }
+    </style>
+</head>
+<body>
+    <video id="rickrollVideo" autoplay muted controls loop>
+        <source src="Rick Roll.ia.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <button id="unmuteButton"><b>Sound On</b></button>
+    <script>
+        const video = document.getElementById('rickrollVideo');
+        const unmuteButton = document.getElementById('unmuteButton');
+
+        video.addEventListener('loadeddata', () => {
+            video.play().catch(error => {
+                console.error("Error al intentar la reproducción automática:", error);
+                // Simular un clic si la reproducción automática falla
+                video.dispatchEvent(new MouseEvent('click', {
+                    'view': window,
+                    'bubbles': true,
+                    'cancelable': true
+                }));
+            });
+        });
+
+        unmuteButton.addEventListener('click', () => {
+            video.muted = false;
+            unmuteButton.style.display = 'none'; // Ocultar el botón después de hacer clic
+        });
+    </script>
+</body>
+</html>
