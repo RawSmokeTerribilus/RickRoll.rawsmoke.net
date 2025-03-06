@@ -4,5 +4,5 @@ services:
     ports:
       - "81:80"
     volumes:
-      - ./:/usr/share/nginx/html:ro
+      - "/PATH/TO/PROJECT/DIRECTORY":/usr/share/nginx/html:ro
     restart: unless-stopped
