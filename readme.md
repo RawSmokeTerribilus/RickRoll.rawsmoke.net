@@ -11,7 +11,7 @@ This is a RickRolling web project that we whipped up in just 5 minutes. Yes, you
 1. **Docker Compose with Nginx**: We used Docker Compose to set up an Nginx server. This makes it super easy to deploy and manage.
 2. **Two Simple Files**: The entire project consists of just two files:
    - `index.html`: The main web page that plays the RickRoll video.
-   - `Rick Roll.ia.mp4`: The video file, https://archive.org/download/rick-roll/Rick%20Roll.mp4 (so no copyright issues here!).
+   - `Rick Roll.ia.mp4`: The video file, https://archive.org/download/rick-roll/Rick%20Roll.mp4 download it and place it in the project's folder (no copyright issues here!).
 3. **Port 81**: We changed the port to 81 to avoid conflicts with other HTTP services running on the server.
 4. **Cloudflare Tunnel**: To serve the site over HTTPS and avoid exposing our server directly to the internet, we routed it through a Cloudflare tunnel.
 
